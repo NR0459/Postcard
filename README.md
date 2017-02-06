@@ -4,11 +4,12 @@ I am familiar with HTML/CSS, JavaScript, and PHP and upon looking through all th
 # Getting Started
  Source files
  
-postcard.html
-postcatd.js
-ms folder
-mail.php
-class.phpmailer.php - A full-featured email creation and transfer class for PHP (https://github.com/PHPMailer/PHPMailer)
+1. postcard.html
+2. postcatd.js
+3. ms folder
+4. mail.php
+5. saveImage.php
+6. class.phpmailer.php - A full-featured email creation and transfer class for PHP (https://github.com/PHPMailer/PHPMailer)
 
 # How to use the application
 To run this application properly, follow the steps below.
