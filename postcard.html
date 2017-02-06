@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Postcard App</title>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <script src="postcard.js"></script>
+  <style>   #image-container {
+      display: flex;
+    }
+  </style>
+  
+</head>
+
+<body>
+  <div>
+	  <p>Upload an image from your local machine. Use Top and Bottom line to write text. Save the image to your local folder then fill the email info and choose the right image and click send.   <a  href="" onclick="myFunction()">See more help</a></p>
+     
+  </div>
+  <div>
+    <input type="file" id="file" />  
+  </div>
+  <div id="image-container">
+    <canvas width="500" height="500"></canvas>
+    <div> 
+         
+      <span>Top Line:</span><br/>
+      <input id="topLineText" type="text"><br/>
+      <span>Bottom Line:</span><br/>
+      <input id="bottomLineText" type="text"><br/>
+      <button id="saveBtn">Save</button><br/>
+      <br/>
+    <form action="mail.php" method="post" id="mailForm" enctype="multipart/form-data">	
+			<span> E-mail : </span><br/>
+			<input type="email" id="email" name="email" class="form-input" placeholder="E-Mail"/><br/>
+			<div id="invalid-email" class="error_msg"></div>
+
+			<span> From E-mail : </span><br/>
+			<input type="email" id="femail" name="femail" class="form-input" placeholder="From E-Mail"/><br/>
+			<div id="invalid-femail" class="error_msg"></div>
+
+			<br/>
+			<span> Image : </span>
+			<input type="file" id="image" name="image" class="form-input" placeholder="Image" accept="image/*"><br/> 
+			<div id="invalid-image" class="error_msg"></div>
+			<br>
+
+			<input type="submit" value="Send Mail!" id="submit_btn" name="submit_btn" class="submit_btn"/><br/>
+	  </form> 
+    </div>
+    
+  </div>
+ 
+<script>
+	window.topLineText = "";
+    window.bottomLineText = "";
+    var input1 = document.getElementById('topLineText');
+    var input2 = document.getElementById('bottomLineText');
+    input1.oninput = textChangeListener;
+    input2.oninput = textChangeListener;
+    document.getElementById('file').addEventListener('change', handleFileSelect, false);
+    document.querySelector('button').addEventListener('click', saveFile, false); 
+</script>
+</body>
+</html>
